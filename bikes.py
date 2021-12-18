@@ -153,7 +153,8 @@ def user_stats(df):
 
 
 def top_data(df):
-    """Displays top 5 longest and shortest bikeshare trips."""
+    """Asks user if they require data of top 5 longest and shortest bikeshare trips and
+    displays the data if answer is positive."""
 
     while True:
         top_data_launch = input('\nWould you like to see top 5 longest and shortest trips?\n').lower()
@@ -178,7 +179,7 @@ def top_data(df):
 
 
 def raw_data(df):
-    """Displays raw data on bikeshare users."""
+    """Asks user if they require raw data on bikeshare users and displays the data if answer is positive.."""
 
     while True:
         raw_data_launch = input('\nWould you like to see the raw data for 5 individual trips?\n')
