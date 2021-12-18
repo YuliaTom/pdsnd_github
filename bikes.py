@@ -115,8 +115,8 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # TO DO: display total travel time
-    tot_travel = int(df['Trip Duration'].sum() / 60)
-    print(' - The total duration of travel is {} minutes.'.format(tot_travel.__round__(2)))
+    total_travel = int(df['Trip Duration'].sum() / 60)
+    print(' - The total duration of travel is {} minutes.'.format(total_travel.__round__(2)))
     # TO DO: display mean travel time
     mean_travel = int(df['Trip Duration'].mean() / 60)
     print(' - The average duration of travel is {} minutes.'.format(mean_travel.__round__(2)))
@@ -140,12 +140,12 @@ def user_stats(df):
         print(' - Unfortunately, there is no user gender and DOB data for the city of Washington.')
     # TO DO: Display earliest, most recent, and most common year of birth
     try:
-        earliest_yob = df['Birth Year'].min()
-        print('\n - The oldest user was born in {}.'.format(int(earliest_yob)))
-        recent_yob = df['Birth Year'].max()
-        print(' - The youngest user was born in {}.'.format(int(recent_yob)))
-        common_yob = df['Birth Year'].mode()[0]
-        print(' - The most common year of birth of the users is {}.'.format(int(common_yob)))
+        earliest_year = df['Birth Year'].min()
+        print('\n - The oldest user was born in {}.'.format(int(earliest_year)))
+        recent_year = df['Birth Year'].max()
+        print(' - The youngest user was born in {}.'.format(int(recent_year)))
+        common_year = df['Birth Year'].mode()[0]
+        print(' - The most common year of birth of the users is {}.'.format(int(common_year)))
     except:
         print(' ')
     print("\nThis took %s seconds." % (time.time() - start_time).__round__(5))
