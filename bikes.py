@@ -82,11 +82,11 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    # TO DO: display the most common month
+    # display the most common month
     pop_month = df['Start Time'].dt.strftime('%B').mode()[0]
-    # TO DO: display the most common day of week
+    # display the most common day of week
     pop_day = df['Start Time'].dt.strftime('%A').mode()[0]
-    # TO DO: display the most common start hour
+    # display the most common start hour
     pop_hour = df['Start Time'].dt.hour.mode()[0]
     print(' - The most popular hour is {} o\'clock.'.format(pop_hour))
     print(' - The most common day of week is {}.'.format(pop_day))
@@ -114,10 +114,10 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # display total travel time
     total_travel = int(df['Trip Duration'].sum() / 60)
     print(' - The total duration of travel is {} minutes.'.format(total_travel.__round__(2)))
-    # TO DO: display mean travel time
+    # display mean travel time
     mean_travel = int(df['Trip Duration'].mean() / 60)
     print(' - The average duration of travel is {} minutes.'.format(mean_travel.__round__(2)))
     print("\nThis took %s seconds." % (time.time() - start_time).__round__(5))
@@ -129,16 +129,16 @@ def user_stats(df):
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
-    # TO DO: Display counts of user types
+    # Display counts of user types
     user_type_count = df['User Type'].value_counts()
     print('\n - There are the following user types and their numbers:\n{}\n'.format(user_type_count.to_string()))
-    # TO DO: Display counts of gender
+    # Display counts of gender
     try:
         gender_count = df['Gender'].value_counts()
         print('\n - The breakdown by gender is:\n{}\n'.format(gender_count.to_string()))
     except:
         print(' - Unfortunately, there is no user gender and DOB data for the city of Washington.')
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     try:
         earliest_year = df['Birth Year'].min()
         print('\n - The oldest user was born in {}.'.format(int(earliest_year)))
